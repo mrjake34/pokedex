@@ -1,16 +1,6 @@
-# pokedex
+Bu repo aşağıda ki youtube linki bulunan canlı yayında söylenen sözlere bir diss olarak yapılmıştır. Flutter'da Native Diller gibi paket olmadan da istediğini yapabilirsinizi göstermek için paket olmadan Http Get işlemi yapılmaktadır. Video nun tamamını geriye sarıp izleyebilirsiniz :)
 
-A new Flutter project.
+https://www.youtube.com/live/P6O-Qz4mtx0?si=sYB0vO2UxM8gPNZf&t=4191
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+İmza
+Flutter Developercıları Savunma derneği temsilcisi :D
