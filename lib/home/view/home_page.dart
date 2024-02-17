@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/home/model/model.dart';
 import 'package:provider/provider.dart';
-
+import '../model/user.dart';
 import '../viewModel/view_model.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -35,16 +36,24 @@ class _MyHomePageState extends State<MyHomePage> {
             if (value.pokemons.isEmpty) {
               return const CircularProgressIndicator();
             }
-            final _pokemons = value.pokemons;
+            // final pokemonsSelect = context.select((ViewModel viewModel) {
+            //   viewModel.pokemons.removeWhere((element) {
+            //     if (element.name == null) return false;
+            //     return element.name!.contains('Bulbasaur');
+            //   });
+            //   return viewModel.pokemons;
+            // });
+            final pokemonRead = context.read<ViewModel>().pokemons;
+            final pokemons = value.pokemons;
             return ListView.builder(
               shrinkWrap: true,
-              itemCount: _pokemons.length,
+              itemCount: pokemons.length,
               itemBuilder: (context, index) {
-                if (_pokemons.isEmpty) return const Text('No data');
+                if (pokemons.isEmpty) return const Text('No data');
+                final pokemon = pokemonRead[index];
                 return ListTile(
                   leading: CircleAvatar(
-                    child: Image.network(
-                        "$imageUrl/${_pokemons[index].pokemodId}.png",
+                    child: Image.network("$imageUrl/${pokemon.pokemodId}.png",
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) {
                       return const Text('No image');
@@ -53,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       return const CircularProgressIndicator();
                     }),
                   ),
-                  title: Text(_pokemons[index].name ?? 'No name'),
+                  title: Text(pokemon.name ?? 'No name'),
                 );
               },
             );
